@@ -1,22 +1,6 @@
 // app/blog/[id]/page.tsx
+import { getBlogPost } from '@/features/blog/api';
 import { client } from '../../../libs/microcms';
-
-// ブログ記事の型定義
-type Props = {
-  id: string;
-  title: string;
-  body: string;
-  publishedAt: string;
-  category: { name: string };
-};
-
-// microCMSから特定の記事を取得
-async function getBlogPost(id: string): Promise<Props> {
-  const data = await client.get({
-    endpoint: `blog/${id}`,
-  });
-  return data;
-}
 
 // 記事詳細ページの生成
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
