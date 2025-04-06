@@ -7,7 +7,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
   const { id } = await params; // IDを取得
   const post = await getBlogPost(id);
 
-
   return (
     <main>
       <h1>{post.title}</h1> {/* タイトルを表示 */}

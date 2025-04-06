@@ -9,8 +9,8 @@ export const getBlogPosts = async (): Promise<BlogListType[]> => {
   const data = await client.get({
     endpoint: 'blog', // 'blog'はmicroCMSのエンドポイント名
     queries: {
-      fields: 'id,title',  // idとtitleを取得
-      limit: 5,  // 最新の5件を取得
+      fields: 'id,title', // idとtitleを取得
+      limit: 5, // 最新の5件を取得
     },
   });
   return data.contents;
